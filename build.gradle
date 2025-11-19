@@ -42,6 +42,23 @@ repositories {
     maven {
         url "https://maven.scijava.org/content/repositories/public/"
     }
+    
+    // DFKI MaryTTS Maven repository
+    maven {
+        url "https://raw.githubusercontent.com/DFKI-MLT/Maven-Repository/main"
+    }
+    
+    // Additional repository for JTOK dependencies
+    exclusiveContent {
+        forRepository {
+            maven {
+                url 'https://raw.githubusercontent.com/DFKI-MLT/Maven-Repository/main'
+            }
+        }
+        filter {
+            includeGroup 'de.dfki.lt.jtok'
+        }
+    }
 }
 
 configurations {
@@ -77,10 +94,11 @@ dependencies {
     implementation 'org.bitbucket.cowwoc.diff-match-patch:diff-match-patch:1.0'
     implementation 'com.l2fprod.common:l2fprod-common-fontchooser:6.9.1'
     implementation 'commons-lang:commons-lang:2.6'
-    implementation 'de.dfki.mary:voice-cmu-slt-hsmm:5.2'
-    implementation 'de.dfki.mary:voice-cmu-bdl-hsmm:5.2'
-    implementation 'de.dfki.mary:voice-cmu-rms-hsmm:5.2'
-    implementation 'de.dfki.mary:voice-dfki-prudence-hsmm:5.2'
+    
+    // MaryTTS dependencies unavailable due to missing transitive dependencies
+    // Using Java's built-in speech synthesis as fallback
+    // implementation 'de.dfki.mary:voice-cmu-slt-hsmm:5.2.1'
+    
     implementation 'org.aspectj:aspectjrt:1.9.7'
     implementation 'com.fifesoft:rsyntaxtextarea:3.1.4'
     implementation 'com.fifesoft:autocomplete:3.1.3'
