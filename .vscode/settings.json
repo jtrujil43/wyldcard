@@ -1,0 +1,12 @@
+{
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "C:\\Users\\jtrujil1\\Documents\\java-1.8.0-openjdk",
+            "default": true
+        }
+    ],
+    "java.home": "C:\\Users\\jtrujil1\\Documents\\java-1.8.0-openjdk",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.detectJdksAtStart": true
+}
